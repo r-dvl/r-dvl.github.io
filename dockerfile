@@ -1,5 +1,7 @@
 FROM node:14-alpine
 
+LABEL org.opencontainers.image.source = "https://github.com/r-dvl/portfolio"
+
 WORKDIR /app
 
 COPY package*.json ./
