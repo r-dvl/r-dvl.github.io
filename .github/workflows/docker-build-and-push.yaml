@@ -5,11 +5,12 @@ on:
     tags:
       - '*'
 
+permissions: write-all
+
 jobs:
   create-release:
     name: Create release
     runs-on: ubuntu-latest
-    permissions: write-all
     outputs:
       tag: ${{ steps.get_tag.outputs.tag }}
 
@@ -38,7 +39,6 @@ jobs:
     name: Build and push
     needs: create-release
     runs-on: ubuntu-latest
-    permissions: write-all
 
     steps:
       - name: Check out the repo
