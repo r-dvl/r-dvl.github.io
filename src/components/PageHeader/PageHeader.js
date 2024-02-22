@@ -15,9 +15,8 @@ export default function PageHeader() {
       <div className="squares square7" />
       <Container>
         <div className="content-center brand">
-          <h1 className="h1-seo">R-dVL</h1>
+          <h1 className="h1-seo">Hi!👋</h1>
           <h3 className="d-none d-sm-block">
-            Hi! 👋
             My name is Raúl Del Valle Lima,
             I am Software Engineer and
             This is my Portfolio.
