@@ -90,7 +90,7 @@ export default function Footer() {
                 id="tooltip230450801"
                 target="_blank"
               >
-                <i className="fab fa-facebook-square" />
+                <i className="fab fa-linkedin" />
               </Button>
               <UncontrolledTooltip delay={0} target="tooltip230450801">
                 Folle me on LinkedIn
