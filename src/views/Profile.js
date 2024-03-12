@@ -47,20 +47,10 @@ import Footer from "components/Footer/Footer.js";
 
 const carouselItems = [
   {
-    src: require("assets/img/visir.jpg"),
+    src: require("assets/img/under_construction.jpeg"),
     altText: "Slide 1",
-    caption: "Visir, server frontpage",
-  },
-  {
-    src: require("assets/img/lima.jpg"),
-    altText: "Slide 2",
-    caption: "Lima, home SCADA",
-  },
-  {
-    src: require("assets/img/cat-watcher.jpg"),
-    altText: "Slide 3",
-    caption: "Cat Watcher, AI supported motion detection",
-  },
+    caption: "Bandanize, band organizer app.",
+  }
 ];
 
 let ps = null;
