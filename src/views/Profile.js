@@ -1,21 +1,4 @@
-/*!
-
-=========================================================
-* BLK Design System React - v1.2.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/blk-design-system-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React from "react";
+import React, { useState } from 'react';
 import classnames from "classnames";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
@@ -57,6 +40,15 @@ let ps = null;
 
 export default function ProfilePage() {
   const [tabs, setTabs] = React.useState(1);
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    message: '',
+  });
+  const TOKEN = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
+  const CHAT_ID = process.env.REACT_APP_TELEGRAM_CHAT_ID;
   React.useEffect(() => {
     if (navigator.platform.indexOf("Win") > -1) {
       document.documentElement.className += " perfect-scrollbar-on";
@@ -77,6 +69,35 @@ export default function ProfilePage() {
       document.body.classList.toggle("profile-page");
     };
   }, []);
+  const handleChange = (event) => {
+    setFormState({
+      ...formState,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const { name, email, phone, company, message } = formState;
+
+    const text = `
+    Portfolio Notifiication
+    =======================
+    Name: ${name}
+    Company: ${company}
+    Email: ${email}
+    Phone: ${phone}
+    Message: ${message}`;
+
+    const response = await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(text)}`, {
+      method: 'POST',
+    });
+
+    if (!response.ok) {
+      console.error('Failed to send message', response);
+    }
+  };
   return (
     <>
       <Navbar />
@@ -329,18 +350,18 @@ export default function ProfilePage() {
                     <h5 className="text-on-back">03</h5>
                   </CardHeader>
                   <CardBody>
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
                       <Row>
                         <Col md="6">
                           <FormGroup>
                             <label>Your Name</label>
-                            <Input placeholder="Darth Vader" type="text" />
+                            <Input placeholder="Darth Vader" type="text" name="name" onChange={handleChange} />
                           </FormGroup>
                         </Col>
                         <Col md="6">
                           <FormGroup>
                             <label>Email address</label>
-                            <Input placeholder="d.vady666@darkside.com" type="email" />
+                            <Input placeholder="d.vady666@darkside.com" type="email" name="email" onChange={handleChange} />
                           </FormGroup>
                         </Col>
                       </Row>
@@ -348,13 +369,13 @@ export default function ProfilePage() {
                         <Col md="6">
                           <FormGroup>
                             <label>Phone</label>
-                            <Input placeholder="+34 987654321" type="text" />
+                            <Input placeholder="+34 987654321" type="text" name="phone" onChange={handleChange} />
                           </FormGroup>
                         </Col>
                         <Col md="6">
                           <FormGroup>
                             <label>Company</label>
-                            <Input placeholder="Galactic Empire" type="text" />
+                            <Input placeholder="Galactic Empire" type="text" name="company" onChange={handleChange} />
                           </FormGroup>
                         </Col>
                       </Row>
@@ -362,7 +383,7 @@ export default function ProfilePage() {
                         <Col md="12">
                           <FormGroup>
                             <label>Message</label>
-                            <Input placeholder="Luke, I am your father!" type="text" />
+                            <Input placeholder="Luke, I am your father!" type="text" name="message" onChange={handleChange} />
                           </FormGroup>
                         </Col>
                       </Row>
@@ -371,7 +392,7 @@ export default function ProfilePage() {
                         color="primary"
                         data-placement="right"
                         id="tooltip341148792"
-                        type="button"
+                        type="submit"
                       >
                         Send text
                       </Button>
