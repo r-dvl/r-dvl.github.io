@@ -40,6 +40,8 @@ let ps = null;
 
 export default function ProfilePage() {
   const [tabs, setTabs] = React.useState(1);
+
+  // Contact form
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -47,8 +49,11 @@ export default function ProfilePage() {
     company: '',
     message: '',
   });
+
+  // Telegram notifications bot env vars
   const TOKEN = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
   const CHAT_ID = process.env.REACT_APP_TELEGRAM_CHAT_ID;
+
   React.useEffect(() => {
     if (navigator.platform.indexOf("Win") > -1) {
       document.documentElement.className += " perfect-scrollbar-on";
@@ -69,6 +74,8 @@ export default function ProfilePage() {
       document.body.classList.toggle("profile-page");
     };
   }, []);
+
+  // Contact form logic
   const handleChange = (event) => {
     setFormState({
       ...formState,
