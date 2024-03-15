@@ -158,7 +158,7 @@ export default function ProfilePage() {
                   </UncontrolledTooltip>
                   <Button
                     className="btn-icon btn-round"
-                    color="pink"
+                    color="dribbble"
                     href="https://www.instagram.com/rastdelvalle"
                     id="tooltip951161185"
                     target="_blank"
@@ -429,13 +429,13 @@ export default function ProfilePage() {
                 </div>
                 <div className="info info-horizontal">
                   <div className="icon icon-primary">
-                    <i className="tim-icons icon-mobile" />
+                    <i className="tim-icons icon-email-85" />
                   </div>
                   <div className="description">
-                    <h4 className="info-title">Reach me on Telegram</h4>
+                    <h4 className="info-title">Contact me by e-mail</h4>
                     <p>
                       Raúl Del Valle Lima <br />
-                      @rastdelvalle <br />
+                      rauldel.valle.lima@gmail.com <br />
                       Mon - Fri, 8:00-17:00
                     </p>
                   </div>
