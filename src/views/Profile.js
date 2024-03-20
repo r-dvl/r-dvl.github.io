@@ -362,13 +362,13 @@ export default function ProfilePage() {
                         <Col md="6">
                           <FormGroup>
                             <label>Your Name</label>
-                            <Input placeholder="Darth Vader" type="text" name="name" onChange={handleChange} />
+                            <Input placeholder="Darth Vader" type="text" name="name" onChange={handleChange} required onInvalid={e => e.target.setCustomValidity("Please fill this field.")} onInput={e => e.target.setCustomValidity("")} />
                           </FormGroup>
                         </Col>
                         <Col md="6">
                           <FormGroup>
                             <label>Email address</label>
-                            <Input placeholder="d.vady666@darkside.com" type="email" name="email" onChange={handleChange} />
+                            <Input placeholder="d.vady666@darkside.com" type="email" name="email" onChange={handleChange} required onInvalid={e => e.target.setCustomValidity("Please fill this field.")} onInput={e => e.target.setCustomValidity("")} />
                           </FormGroup>
                         </Col>
                       </Row>
@@ -390,7 +390,7 @@ export default function ProfilePage() {
                         <Col md="12">
                           <FormGroup>
                             <label>Message</label>
-                            <Input placeholder="Luke, I am your father!" type="text" name="message" onChange={handleChange} />
+                            <Input placeholder="Luke, I am your father!" type="text" name="message" onChange={handleChange} required onInvalid={e => e.target.setCustomValidity("Please fill this field.")} onInput={e => e.target.setCustomValidity("")} />
                           </FormGroup>
                         </Col>
                       </Row>
