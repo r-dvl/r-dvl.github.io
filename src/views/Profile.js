@@ -30,9 +30,9 @@ import Footer from "components/Footer/Footer.js";
 
 const carouselItems = [
   {
-    src: require("assets/img/under_construction.jpeg"),
+    src: require("assets/img/ansible-manager.png"),
     altText: "Slide 1",
-    caption: "Bandanize, band organizer app.",
+    caption: "Ansible Manager, execution statistics dashboard.",
   }
 ];
 
