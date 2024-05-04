@@ -21,18 +21,19 @@ import {
   Row,
   Col,
   UncontrolledTooltip,
-  UncontrolledCarousel,
 } from "reactstrap";
 
 // core components
-import Navbar from "components/Navbar/Navbar.js";
-import Footer from "components/Footer/Footer.js";
+import Navbar from "components/Navbar";
+import Footer from "components/Footer";
+import Carousel from "components/Carousel";
 
 const carouselItems = [
   {
     src: require("assets/img/ansible-manager.png"),
     altText: "Slide 1",
-    caption: "Ansible Manager, execution statistics dashboard.",
+    caption: "Ansible server dashboard.",
+    header: "Ansible Manager"
   }
 ];
 
@@ -330,7 +331,7 @@ export default function ProfilePage() {
             <Row className="justify-content-between">
               <Col md="6">
                 <Row className="justify-content-between align-items-center">
-                  <UncontrolledCarousel items={carouselItems} />
+                  <Carousel items={carouselItems} />
                 </Row>
               </Col>
               <Col md="5">

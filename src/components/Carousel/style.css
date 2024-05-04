@@ -1,0 +1,17 @@
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  color: black;
+}
+
+.carousel-caption h3,
+.carousel-caption p {
+  color: black !important;
+}
+
+.carousel-indicators li.active {
+    background-color: black !important;
+  }
+
+  .carousel-indicators li {
+    background-color: #808080 !important;
+  }
