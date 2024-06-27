@@ -177,7 +177,7 @@ export default function ProfilePage() {
                     <img
                       alt="..."
                       className="img-center img-fluid rounded-circle"
-                      src={require("assets/img/rast&puma.jpg")}
+                      src={require("assets/img/profile.png")}
                     />
                     <h4 className="title">Raúl Del Valle Lima</h4>
                   </CardHeader>
