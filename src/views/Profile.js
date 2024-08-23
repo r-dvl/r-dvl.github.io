@@ -244,18 +244,23 @@ export default function ProfilePage() {
                           </thead>
                           <tbody>
                             <tr>
-                              <td>Kyndryl</td>
-                              <td>Software Engineer</td>
+                              <td>UST</td>
+                              <td>DevOps Engineer</td>
                               <td>2023 - Now</td>
                             </tr>
                             <tr>
+                              <td>Kyndryl</td>
+                              <td>Software Engineer</td>
+                              <td>2023 - 2024</td>
+                            </tr>
+                            <tr>
                               <td>STC</td>
-                              <td>SCADA Engineer</td>
+                              <td>Software Engineer</td>
                               <td>2022 - 2023</td>
                             </tr>
                             <tr>
                               <td>Roptex</td>
-                              <td>Automation Engineer</td>
+                              <td>Software Engineer</td>
                               <td>2021 - 2022</td>
                             </tr>
                           </tbody>
