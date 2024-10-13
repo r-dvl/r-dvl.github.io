@@ -234,7 +234,7 @@ export default function ProfilePage() {
                             <tr>
                               <td>UST</td>
                               <td>DevOps Engineer</td>
-                              <td>2023 - Now</td>
+                              <td>2024 - Now</td>
                             </tr>
                             <tr>
                               <td>Kyndryl</td>
