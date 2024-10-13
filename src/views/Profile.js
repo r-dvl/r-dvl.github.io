@@ -157,18 +157,6 @@ export default function ProfilePage() {
                   <UncontrolledTooltip delay={0} target="tooltip982846143">
                     Follow me on Linkedin
                   </UncontrolledTooltip>
-                  <Button
-                    className="btn-icon btn-round"
-                    color="dribbble"
-                    href="https://www.instagram.com/rastdelvalle"
-                    id="tooltip951161185"
-                    target="_blank"
-                  >
-                    <i className="fab fa-instagram" />
-                  </Button>
-                  <UncontrolledTooltip delay={0} target="tooltip951161185">
-                    Like me on Instagram
-                  </UncontrolledTooltip>
                 </div>
               </Col>
               <Col className="ml-auto mr-auto" lg="6" md="6">
