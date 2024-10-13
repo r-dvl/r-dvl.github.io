@@ -118,18 +118,6 @@ export default function IndexNavbar() {
                 <p className="d-lg-none d-xl-none">Linkedin</p>
               </NavLink>
             </NavItem>
-            <NavItem className="p-0">
-              <NavLink
-                data-placement="bottom"
-                href="https://www.instagram.com/rastdelvalle"
-                rel="noopener noreferrer"
-                target="_blank"
-                title="Follow me on Instagram"
-              >
-                <i className="fab fa-instagram" />
-                <p className="d-lg-none d-xl-none">Instagram</p>
-              </NavLink>
-            </NavItem>
           </Nav>
         </Collapse>
       </Container>
