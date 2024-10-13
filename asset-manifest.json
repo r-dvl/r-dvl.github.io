@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.b1248db0.css",
+    "main.js": "/portfolio/static/js/main.0f4e97ad.js",
+    "static/media/square4.png": "/portfolio/static/media/square4.b0072563cab16ef45d81.png",
+    "static/media/square1.png": "/portfolio/static/media/square1.082ea17aaf44aed9868a.png",
+    "static/media/square3.png": "/portfolio/static/media/square3.235ea41b7cee0696448d.png",
+    "static/media/square2.png": "/portfolio/static/media/square2.8ce0f9b6a9f216ada045.png",
+    "static/media/square5.png": "/portfolio/static/media/square5.16283001f5a086113265.png",
+    "static/media/darken-night-sky-full-of-stars-fantasy-animation-made-of-magical-sparkly-light-particles-flickering-on-a-purple-blue-gradient-background_bajacpz7x_thumbnail-full01.png": "/portfolio/static/media/darken-night-sky-full-of-stars-fantasy-animation-made-of-magical-sparkly-light-particles-flickering-on-a-purple-blue-gradient-background_bajacpz7x_thumbnail-full01.049a2cd26a85856a45e6.png",
+    "static/media/night-sky-full-of-stars-fantasy-animation-made-of-magical-sparkly-light-particles-flickering-on-a-purple-blue-gradient-background_bajacpz7x_thumbnail-full01.png": "/portfolio/static/media/night-sky-full-of-stars-fantasy-animation-made-of-magical-sparkly-light-particles-flickering-on-a-purple-blue-gradient-background_bajacpz7x_thumbnail-full01.e6a30d27482b2b409f71.png",
+    "static/media/profile.png": "/portfolio/static/media/profile.4e1029e134c114edd9dc.png",
+    "static/media/dots.png": "/portfolio/static/media/dots.1e305f981d41a2c30adb.png",
+    "static/media/ansible-manager.png": "/portfolio/static/media/ansible-manager.b10672d38f5a8bedacd1.png",
+    "static/media/path4.png": "/portfolio/static/media/path4.cb1d9fab145d91e36846.png",
+    "static/media/nucleo.eot": "/portfolio/static/media/nucleo.bd5cce8bf40be5947637.eot",
+    "static/media/nucleo.ttf": "/portfolio/static/media/nucleo.35b08447277ca7bf9f09.ttf",
+    "static/media/nucleo.woff": "/portfolio/static/media/nucleo.5c65ef4d6434bb8062a3.woff",
+    "static/media/nucleo.woff2": "/portfolio/static/media/nucleo.6dfb4833e3a0132fd1fc.woff2",
+    "index.html": "/portfolio/index.html",
+    "main.b1248db0.css.map": "/portfolio/static/css/main.b1248db0.css.map",
+    "main.0f4e97ad.js.map": "/portfolio/static/js/main.0f4e97ad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b1248db0.css",
+    "static/js/main.0f4e97ad.js"
+  ]
+}
