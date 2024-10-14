@@ -336,7 +336,8 @@ export default function ProfilePage() {
                   APPs just to learn new technologies or apply new methods to
                   improve the performance or security of my code.<br />
                   As I don't forget my roots, I also love to create
-                  domotic applications with PLCs and electronic junk.
+                  domotic applications with PLCs and electronic junk.<br />
+                  There is more information of my projects in my Github profile!
                 </p>
               </Col>
             </Row>
