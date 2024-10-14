@@ -30,8 +30,14 @@ import Carousel from "components/Carousel";
 
 const carouselItems = [
   {
-    src: require("assets/img/ansible-manager.png"),
+    src: require("assets/img/invoice-control.png"),
     altText: "Slide 1",
+    caption: "Invoice control WebApp.",
+    header: "AMS Invoice Control"
+  },
+  {
+    src: require("assets/img/ansible-manager.png"),
+    altText: "Slide 2",
     caption: "Ansible server dashboard.",
     header: "Ansible Manager"
   }
@@ -98,6 +104,18 @@ export default function ProfilePage() {
       console.error('Failed to send message', response);
     }
   };
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleSlideChange = (newIndex) => {
+    setActiveIndex(newIndex);
+  };
+
+  const descriptions = [
+    "A Django-powered web application for invoice management, featuring interactive charts, detailed statistics, and a built-in PDF viewer. This app streamlines the tracking of invoices, providing clear insights into payments and outstanding balances with visual analytics and an intuitive interface.",
+    "A web application built with React and FastAPI, fully containerized with Docker, designed for managing and executing Ansible jobs. It features real-time job monitoring, graphical representations of job data, and detailed log tracking to streamline automation processes."
+  ];
+
   return (
     <>
       <Navbar />
@@ -312,27 +330,23 @@ export default function ProfilePage() {
           </Container>
         </div>
         <div className="section">
-          <Container>
-            <Row className="justify-content-between">
-              <Col md="6">
-                <Row className="justify-content-between align-items-center">
-                  <Carousel items={carouselItems} />
-                </Row>
-              </Col>
-              <Col md="5">
-                <h1 className="profile-title text-left">Projects</h1>
-                <h5 className="text-on-back">02</h5>
-                <p className="profile-description text-left">
-                  I spend a lot of time developing, testing and studying the best CI/CD lifecycle of my own
-                  APPs just to learn new technologies or apply new methods to
-                  improve the performance or security of my code.<br />
-                  As I don't forget my roots, I also love to create
-                  domotic applications with PLCs and electronic junk.
-                </p>
-              </Col>
-            </Row>
-          </Container>
-        </div>
+        <Container>
+          <Row className="justify-content-between">
+            <Col md="6">
+              <Row className="justify-content-between align-items-center">
+                <Carousel items={carouselItems} onSlideChange={handleSlideChange} />
+              </Row>
+            </Col>
+            <Col md="5">
+              <h1 className="profile-title text-left">Projects</h1>
+              <h5 className="text-on-back">02</h5>
+              <p className="profile-description text-left">
+                {descriptions[activeIndex]}
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </div>
         <section className="section">
           <Container>
             <Row>
