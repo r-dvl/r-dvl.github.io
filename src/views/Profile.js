@@ -32,14 +32,16 @@ const carouselItems = [
   {
     src: require("assets/img/invoice-control.png"),
     altText: "Slide 1",
-    caption: "Django-powered WebApp for invoice control.",
-    header: "AMS Invoice Control"
+    caption: "AMS Invoice Control",
+    header: "AMS Invoice Control",
+    url: "https://github.com/r-dvl/ams-invoices-control"
   },
   {
     src: require("assets/img/ansible-manager.png"),
     altText: "Slide 2",
-    caption: "WebApp built with React and FastAPI for Ansible jobs management.",
-    header: "Ansible Manager"
+    caption: "Ansible Manager",
+    header: "Ansible Manager",
+    url: "https://github.com/r-dvl/ansible-manager"
   }
 ];
 
