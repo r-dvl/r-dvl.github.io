@@ -41,9 +41,6 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}/${{ env.IMAGE_NAME }}:${{ steps.get_tag.outputs.tag }}
             ghcr.io/${{ github.repository }}/${{ env.IMAGE_NAME }}:latest
-          build-args: |
-            REACT_APP_TELEGRAM_BOT_TOKEN=${{ secrets.REACT_APP_TELEGRAM_BOT_TOKEN }}
-            REACT_APP_TELEGRAM_CHAT_ID=${{ secrets.REACT_APP_TELEGRAM_CHAT_ID }}
 
   create-release:
     name: Create release
