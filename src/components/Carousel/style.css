@@ -3,8 +3,8 @@
   color: black;
 }
 
-.carousel-caption h3,
-.carousel-caption p {
+.carousel .carousel-caption h3,
+.carousel .carousel-caption p {
   color: black !important;
 }
 
