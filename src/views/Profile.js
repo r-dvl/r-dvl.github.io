@@ -51,10 +51,6 @@ export default function ProfilePage() {
     message: '',
   });
 
-  // Telegram notifications bot env vars
-  const TOKEN = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
-  const CHAT_ID = process.env.REACT_APP_TELEGRAM_CHAT_ID;
-
   React.useEffect(() => {
     if (navigator.platform.indexOf("Win") > -1) {
       document.documentElement.className += " perfect-scrollbar-on";
@@ -89,18 +85,14 @@ export default function ProfilePage() {
 
     const { name, email, phone, company, message } = formState;
 
-    const text = `
-    Portfolio Notifiication
-    =======================
-    Name: ${name}
-    Company: ${company}
-    Email: ${email}
-    Phone: ${phone}
-    Message: ${message}`;
-
-    const response = await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(text)}`, {
+    const response = await fetch('https://ntfy.rdvl-server.site/Portfolio', {
       method: 'POST',
-    });
+      body: `${message} \n Contact: ${email}, ${phone}`,
+      headers: {
+          'Title': `${name} from ${company} sent a message.`,
+          'Priority': 'urgent',
+      }
+  })
 
     if (!response.ok) {
       console.error('Failed to send message', response);
