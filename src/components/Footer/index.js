@@ -47,17 +47,17 @@ export default function Footer() {
           <Col md="3">
             <Nav>
               <NavItem>
-                <NavLink href="https://r-dvl.site">
+                <NavLink href="https://r-dvl.github.io/portfolio/">
                   Contact Me
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://r-dvl.site">
+                <NavLink href="https://r-dvl.github.io/portfolio/">
                   About Me
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://r-dvl.site">
+                <NavLink href="https://r-dvl.github.io/portfolio/">
                   Blog
                 </NavLink>
               </NavItem>
