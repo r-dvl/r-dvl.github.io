@@ -93,7 +93,7 @@ export default function Footer() {
                 <i className="fab fa-linkedin" />
               </Button>
               <UncontrolledTooltip delay={0} target="tooltip230450801">
-                Folle me on LinkedIn
+                Follow me on LinkedIn
               </UncontrolledTooltip>
             </div>
           </Col>
