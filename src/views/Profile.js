@@ -93,7 +93,7 @@ export default function ProfilePage() {
 
     const { name, email, phone, company, message } = formState;
 
-    const response = await fetch('https://ntfy.rdvl-server.site/Portfolio', {
+    const response = await fetch('https://ntfy.rdvl.net/Portfolio', {
       method: 'POST',
       body: `${message} \n Contact: ${email}, ${phone}`,
       headers: {
