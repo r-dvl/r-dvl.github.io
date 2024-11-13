@@ -37,8 +37,15 @@ const carouselItems = [
     url: "https://github.com/r-dvl/ams-invoices-control"
   },
   {
-    src: require("assets/img/ansible-manager.png"),
+    src: require("assets/img/lima.png"),
     altText: "Slide 2",
+    caption: "Lima",
+    header: "Lima",
+    url: "https://github.com/r-dvl/lima"
+  },
+  {
+    src: require("assets/img/ansible-manager.png"),
+    altText: "Slide 3",
     caption: "Ansible Manager",
     header: "Ansible Manager",
     url: "https://github.com/r-dvl/ansible-manager"
