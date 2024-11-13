@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.99825420.css",
-    "main.js": "/portfolio/static/js/main.254a0a1b.js",
+    "main.js": "/portfolio/static/js/main.bf1f4a62.js",
     "static/media/square4.png": "/portfolio/static/media/square4.b0072563cab16ef45d81.png",
     "static/media/square1.png": "/portfolio/static/media/square1.082ea17aaf44aed9868a.png",
     "static/media/square3.png": "/portfolio/static/media/square3.235ea41b7cee0696448d.png",
     "static/media/square2.png": "/portfolio/static/media/square2.8ce0f9b6a9f216ada045.png",
     "static/media/square5.png": "/portfolio/static/media/square5.16283001f5a086113265.png",
+    "static/media/lima.png": "/portfolio/static/media/lima.6e3330acc192eb2eaac3.png",
     "static/media/darken-night-sky-full-of-stars-fantasy-animation-made-of-magical-sparkly-light-particles-flickering-on-a-purple-blue-gradient-background_bajacpz7x_thumbnail-full01.png": "/portfolio/static/media/darken-night-sky-full-of-stars-fantasy-animation-made-of-magical-sparkly-light-particles-flickering-on-a-purple-blue-gradient-background_bajacpz7x_thumbnail-full01.049a2cd26a85856a45e6.png",
     "static/media/night-sky-full-of-stars-fantasy-animation-made-of-magical-sparkly-light-particles-flickering-on-a-purple-blue-gradient-background_bajacpz7x_thumbnail-full01.png": "/portfolio/static/media/night-sky-full-of-stars-fantasy-animation-made-of-magical-sparkly-light-particles-flickering-on-a-purple-blue-gradient-background_bajacpz7x_thumbnail-full01.e6a30d27482b2b409f71.png",
     "static/media/profile.png": "/portfolio/static/media/profile.4e1029e134c114edd9dc.png",
@@ -20,10 +21,10 @@
     "static/media/nucleo.woff2": "/portfolio/static/media/nucleo.6dfb4833e3a0132fd1fc.woff2",
     "index.html": "/portfolio/index.html",
     "main.99825420.css.map": "/portfolio/static/css/main.99825420.css.map",
-    "main.254a0a1b.js.map": "/portfolio/static/js/main.254a0a1b.js.map"
+    "main.bf1f4a62.js.map": "/portfolio/static/js/main.bf1f4a62.js.map"
   },
   "entrypoints": [
     "static/css/main.99825420.css",
-    "static/js/main.254a0a1b.js"
+    "static/js/main.bf1f4a62.js"
   ]
 }
