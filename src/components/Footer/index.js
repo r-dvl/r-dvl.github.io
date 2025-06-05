@@ -18,23 +18,13 @@ export default function Footer() {
       <Container>
         <Row>
           <Col md="3">
-            <h1 className="title">R-dVL</h1>
+            <h1 className="title">r-dvl</h1>
           </Col>
           <Col md="3">
             <Nav>
               <NavItem>
                 <NavLink to="/home" tag={Link}>
                   Home
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/home" tag={Link}>
-                  Landing
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/home" tag={Link}>
-                  Register
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -47,23 +37,18 @@ export default function Footer() {
           <Col md="3">
             <Nav>
               <NavItem>
-                <NavLink href="https://r-dvl.github.io/portfolio/">
-                  Contact Me
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://r-dvl.github.io/portfolio/">
+                <NavLink href="https://r-dvl.github.io/portfolio/#about-me">
                   About Me
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://r-dvl.github.io/portfolio/">
-                  Blog
+                <NavLink href="https://r-dvl.github.io/portfolio/#projects">
+                  Projects
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://opensource.org/licenses/MIT">
-                  License
+                <NavLink href="https://r-dvl.github.io/portfolio/#contact">
+                  Contact Me
                 </NavLink>
               </NavItem>
             </Nav>

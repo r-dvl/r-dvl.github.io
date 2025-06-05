@@ -52,11 +52,11 @@ export default function IndexNavbar() {
       <Container>
         <div className="navbar-translate">
           <NavbarBrand to="/" tag={Link} id="navbar-brand">
-            <span>R-dVL | </span>
+            <span>r-dvl | </span>
             Portfolio
           </NavbarBrand>
           <UncontrolledTooltip placement="bottom" target="navbar-brand">
-            Designed and Coded by R-dVL
+            Designed and Coded by r-dvl
           </UncontrolledTooltip>
           <button
             aria-expanded={collapseOpen}
@@ -78,8 +78,8 @@ export default function IndexNavbar() {
           <div className="navbar-collapse-header">
             <Row>
               <Col className="collapse-brand" xs="6">
-                <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  R-dVL | Portfolio
+                <a href="#r-dvl" onClick={(e) => e.preventDefault()}>
+                  r-dvl | Portfolio
                 </a>
               </Col>
               <Col className="collapse-close text-right" xs="6">

@@ -10,25 +10,34 @@ import { Container, Row, Col, Button, UncontrolledTooltip } from "reactstrap";
 
 const carouselItems = [
   {
-    src: require("assets/img/invoice-control.png"),
+    src: require("assets/img/projects/mahle.png"),
     altText: "Slide 1",
-    caption: "AMS Invoice Control",
-    header: "AMS Invoice Control",
-    url: "https://github.com/r-dvl/ams-invoices-control"
+    caption: "Mahle, IoT Software Development",
+    header: "Mahle, IoT Software Development"
   },
   {
-    src: require("assets/img/lima.png"),
+    src: require("assets/img/projects/audi.png"),
     altText: "Slide 2",
-    caption: "Lima",
-    header: "Lima",
-    url: "https://github.com/r-dvl/lima"
+    caption: "Audi, IoT Software Development",
+    header: "Audi, IoT Software Development"
   },
   {
-    src: require("assets/img/ansible-manager.png"),
+    src: require("assets/img/projects/iveco.png"),
     altText: "Slide 3",
-    caption: "Ansible Manager",
-    header: "Ansible Manager",
-    url: "https://github.com/r-dvl/ansible-manager"
+    caption: "Iveco, IoT Software Development",
+    header: "Iveco, IoT Software Development"
+  },
+  {
+    src: require("assets/img/projects/mapfre.png"),
+    altText: "Slide 4",
+    caption: "Mapfre, CI/CD Automation",
+    header: "Mapfre, CI/CD Automation"
+  },
+  {
+    src: require("assets/img/projects/santander.png"),
+    altText: "Slide 5",
+    caption: "Santander, DevOps Service",
+    header: "Santander, DevOps Service"
   }
 ];
 

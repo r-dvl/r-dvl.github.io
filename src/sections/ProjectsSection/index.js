@@ -16,11 +16,10 @@ export default function ProjectsSection({ carouselItems }) {
             <h1 className="profile-title text-left">Projects</h1>
             <h5 className="text-on-back">02</h5>
             <p className="profile-description text-left">
-              I spend a lot of time developing, testing, and studying the best CI/CD lifecycles for my own
-              apps to learn new technologies or apply new methods to
-              improve the performance or security of my code.<br />
-              I also love creating home automation applications with PLCs and electronics.<br />
-              You can find more information about my projects on my GitHub profile!
+              My career began in developing IoT applications, contributing to projects for companies such as Audi, MAHLE, and Iveco.<br /><br />
+              I later specialized in automation and CI/CD pipeline development at Mapfre, as I am obsessed with automation and clean code.<br /><br />
+              Currently, I deliver DevOps services for Santander Bank, where I am expanding my knowledge about Platform Engineering.<br /><br />
+              I am also dedicated to personal projects, which you can explore on my GitHub profile.<br /><br />
             </p>
           </Col>
         </Row>

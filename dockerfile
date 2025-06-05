@@ -1,7 +1,7 @@
 FROM node:14-alpine
 
 LABEL org.opencontainers.image.source = "https://github.com/r-dvl/portfolio"
-LABEL org.opencontainers.image.description "R-dVL's portfolio"
+LABEL org.opencontainers.image.description "r-dvl portfolio"
 
 WORKDIR /app
 
