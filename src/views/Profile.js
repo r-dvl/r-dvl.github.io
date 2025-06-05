@@ -8,6 +8,8 @@ import ProjectsSection from "sections/ProjectsSection";
 import ContactInfo from "sections/ContactInfo";
 import { Container, Row, Col, Button, UncontrolledTooltip } from "reactstrap";
 
+const DISCORD_WEBHOOK_URL = process.env.REACT_APP_DISCORD_WEBHOOK_URL;
+
 const carouselItems = [
   {
     src: require("assets/img/projects/mahle.png"),
@@ -83,7 +85,7 @@ export default function ProfilePage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { name, email, phone, company, message } = formState;
-    const response = await fetch('https://ntfy.rdvl.net/Portfolio', {
+    const response = await fetch(DISCORD_WEBHOOK_URL, {
       method: 'POST',
       body: `${message} \n Contact: ${email}, ${phone}`,
       headers: {
