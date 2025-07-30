@@ -23,32 +23,13 @@ export default function Footer() {
           <Col md="3">
             <Nav>
               <NavItem>
-                <NavLink to="/home" tag={Link}>
-                  Home
+                <NavLink href="https://r-dvl.github.io/blog">
+                  Blog
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/home" tag={Link}>
-                  Profile
-                </NavLink>
-              </NavItem>
-            </Nav>
-          </Col>
-          <Col md="3">
-            <Nav>
-              <NavItem>
-                <NavLink href="https://r-dvl.github.io/portfolio/#about-me">
-                  About Me
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://r-dvl.github.io/portfolio/#projects">
-                  Projects
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://r-dvl.github.io/portfolio/#contact">
-                  Contact Me
+                <NavLink href="https://r-dvl.github.io/docs">
+                  Docs
                 </NavLink>
               </NavItem>
             </Nav>
