@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 // reactstrap components
 import {
   Button,
@@ -23,12 +22,12 @@ export default function Footer() {
           <Col md="3">
             <Nav>
               <NavItem>
-                <NavLink href="https://r-dvl.github.io/blog">
+                <NavLink href="https://r-dvl.github.io/blog" target="_blank">
                   Blog
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://r-dvl.github.io/docs">
+                <NavLink href="https://r-dvl.github.io/docs" target="_blank">
                   Docs
                 </NavLink>
               </NavItem>
