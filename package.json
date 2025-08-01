@@ -6,9 +6,9 @@
   "author": "r-dvl",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/r-dvl/portfolio.git"
+    "url": "git+https://github.com/r-dvl/r-dvl.github.io.git"
   },
-  "homepage": "https://r-dvl.github.io/portfolio",
+  "homepage": "https://r-dvl.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "14.0.0",

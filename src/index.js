@@ -12,8 +12,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/portfolio" element={<Profile />} />
-      <Route path="*" element={<Navigate to="/portfolio" replace />} />
+      <Route path="/" element={<Profile />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   </BrowserRouter>
 );
