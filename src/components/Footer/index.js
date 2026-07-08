@@ -1,68 +1,87 @@
 import React from "react";
-// reactstrap components
-import {
-  Button,
-  NavItem,
-  NavLink,
-  Nav,
-  Container,
-  Row,
-  Col,
-  UncontrolledTooltip,
-} from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer footer-enhanced">
       <Container>
         <Row>
-          <Col md="3">
-            <h1 className="title">r-dvl</h1>
+          <Col lg="4" md="6" sm="12">
+            <div className="footer-brand">
+              <h3 className="footer-logo">
+                <span className="gradient-text">r-dvl</span>
+              </h3>
+              <p className="footer-tagline">
+                DevOps Engineer & Software Developer. Passionate about automation, cloud infrastructure, and clean code.
+              </p>
+            </div>
           </Col>
-          <Col md="3">
-            <Nav>
-              <NavItem>
-                <NavLink href="https://r-dvl.github.io/blog" target="_blank">
+          <Col lg="2" md="3" sm="6">
+            <h4 className="footer-section-title">Links</h4>
+            <ul className="footer-links">
+              <li>
+                <a href="https://r-dvl.github.io/blog" target="_blank" rel="noopener noreferrer">
+                  <i className="fas fa-pen-fancy" />
                   Blog
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://r-dvl.github.io/docs" target="_blank">
+                </a>
+              </li>
+              <li>
+                <a href="https://r-dvl.github.io/docs" target="_blank" rel="noopener noreferrer">
+                  <i className="fas fa-book" />
                   Docs
-                </NavLink>
-              </NavItem>
-            </Nav>
+                </a>
+              </li>
+            </ul>
           </Col>
-          <Col md="3">
-            <h3 className="title">Follow me:</h3>
-            <div className="btn-wrapper profile">
-              <Button
-                className="btn-icon btn-neutral btn-round btn-simple"
-                color="default"
+          <Col lg="3" md="3" sm="6">
+            <h4 className="footer-section-title">Curriculum Vitae</h4>
+            <ul className="footer-links">
+              <li>
+                <a href="https://rxresu.me/r-dvl/cv-en" target="_blank" rel="noopener noreferrer">
+                  <i className="far fa-file-alt" />
+                  English Version
+                </a>
+              </li>
+              <li>
+                <a href="https://rxresu.me/r-dvl/cv-es" target="_blank" rel="noopener noreferrer">
+                  <i className="far fa-file-alt" />
+                  Versión Española
+                </a>
+              </li>
+            </ul>
+          </Col>
+          <Col lg="3" md="12">
+            <h4 className="footer-section-title">Follow me</h4>
+            <div className="footer-social">
+              <a
+                className="social-btn"
                 href="https://github.com/r-dvl"
-                id="tooltip622135962"
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
               >
                 <i className="fab fa-github" />
-              </Button>
-              <UncontrolledTooltip delay={0} target="tooltip622135962">
-                Follow me on Github
-              </UncontrolledTooltip>
-              <Button
-                className="btn-icon btn-neutral btn-round btn-simple"
-                color="default"
+              </a>
+              <a
+                className="social-btn"
                 href="https://www.linkedin.com/in/r-dvl"
-                id="tooltip230450801"
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
                 <i className="fab fa-linkedin" />
-              </Button>
-              <UncontrolledTooltip delay={0} target="tooltip230450801">
-                Follow me on LinkedIn
-              </UncontrolledTooltip>
+              </a>
             </div>
           </Col>
         </Row>
+        <div className="footer-bottom">
+          <p className="copyright">
+            © {new Date().getFullYear()} Raúl Del Valle Lima. All rights reserved.
+          </p>
+          <span className="footer-credits">
+            Made with <span style={{ color: "#e14eca" }}>♥</span> from Algeciras
+          </span>
+        </div>
       </Container>
     </footer>
   );

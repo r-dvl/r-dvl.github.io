@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PerfectScrollbar from "perfect-scrollbar";
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
@@ -6,44 +6,58 @@ import ContactForm from "sections/ContactForm";
 import ProfileTabs from "sections/ProfileTabs";
 import ProjectsSection from "sections/ProjectsSection";
 import ContactInfo from "sections/ContactInfo";
-import { Container, Row, Col, Button, UncontrolledTooltip } from "reactstrap";
+import TechStack from "sections/TechStack";
+import { Container, Row, Col } from "reactstrap";
 
 const DISCORD_WEBHOOK_URL = process.env.REACT_APP_DISCORD_WEBHOOK_URL;
 
-const carouselItems = [
-  {
-    src: require("assets/img/projects/mahle.png"),
-    altText: "Slide 1",
-    caption: "Mahle, IoT Software Development",
-    header: "Mahle, IoT Software Development"
-  },
-  {
-    src: require("assets/img/projects/audi.png"),
-    altText: "Slide 2",
-    caption: "Audi, IoT Software Development",
-    header: "Audi, IoT Software Development"
-  },
-  {
-    src: require("assets/img/projects/iveco.png"),
-    altText: "Slide 3",
-    caption: "Iveco, IoT Software Development",
-    header: "Iveco, IoT Software Development"
-  },
-  {
-    src: require("assets/img/projects/mapfre.png"),
-    altText: "Slide 4",
-    caption: "Mapfre, CI/CD Automation",
-    header: "Mapfre, CI/CD Automation"
-  },
-  {
-    src: require("assets/img/projects/santander.png"),
-    altText: "Slide 5",
-    caption: "Santander, DevOps Service",
-    header: "Santander, DevOps Service"
-  }
+const roles = [
+  "DevOps Engineer",
+  "Software Developer",
+  "Automation Enthusiast",
+  "Cloud Architect",
+  "Platform Engineer",
 ];
 
 let ps = null;
+
+function TypingEffect({ words, typingSpeed = 80, deletingSpeed = 40, pauseTime = 2000 }) {
+  const [displayText, setDisplayText] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const tick = useCallback(() => {
+    const currentWord = words[wordIndex];
+
+    if (!isDeleting) {
+      setDisplayText(currentWord.substring(0, displayText.length + 1));
+      if (displayText.length + 1 === currentWord.length) {
+        setTimeout(() => setIsDeleting(true), pauseTime);
+        return;
+      }
+    } else {
+      setDisplayText(currentWord.substring(0, displayText.length - 1));
+      if (displayText.length - 1 === 0) {
+        setIsDeleting(false);
+        setWordIndex((prev) => (prev + 1) % words.length);
+        return;
+      }
+    }
+  }, [displayText, isDeleting, wordIndex, words, pauseTime]);
+
+  useEffect(() => {
+    const speed = isDeleting ? deletingSpeed : typingSpeed;
+    const timer = setTimeout(tick, speed);
+    return () => clearTimeout(timer);
+  }, [tick, isDeleting, typingSpeed, deletingSpeed]);
+
+  return (
+    <span>
+      {displayText}
+      <span className="typing-cursor" />
+    </span>
+  );
+}
 
 export default function ProfilePage() {
   const [tabs, setTabs] = useState(1);
@@ -55,7 +69,7 @@ export default function ProfilePage() {
     message: '',
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (navigator.platform.indexOf("Win") > -1) {
       document.documentElement.className += " perfect-scrollbar-on";
       document.documentElement.classList.remove("perfect-scrollbar-off");
@@ -85,80 +99,121 @@ export default function ProfilePage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { name, email, phone, company, message } = formState;
-    const response = await fetch(DISCORD_WEBHOOK_URL, {
-      method: 'POST',
-      body: `${message} \n Contact: ${email}, ${phone}`,
-      headers: {
-        'Title': `${name} from ${company} sent a message.`,
-        'Priority': 'urgent',
-      }
+
+    const payload = {
+      content: `New contact form submission from **${name}**`,
+      embeds: [{
+        title: `📩 New message from ${name}`,
+        color: 0xe14eca,
+        fields: [
+          { name: "📧 Email", value: email, inline: true },
+          { name: "📱 Phone", value: phone || "N/A", inline: true },
+          { name: "🏢 Company", value: company || "N/A", inline: true },
+          { name: "💬 Message", value: message },
+        ],
+        timestamp: new Date().toISOString(),
+      }]
+    };
+
+    const formData = new FormData();
+    formData.append("payload_json", JSON.stringify(payload));
+
+    // Using FormData and 'no-cors' mode avoids CORS preflight OPTIONS requests,
+    // which Discord's API doesn't support for client-side webhooks.
+    await fetch(DISCORD_WEBHOOK_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: formData,
     });
-    if (!response.ok) {
-      console.error('Failed to send message', response);
-    }
+
+    setFormState({ name: "", email: "", phone: "", company: "", message: "" });
   };
 
   return (
     <>
       <Navbar />
       <div className="wrapper">
-        <div className="page-header">
-          <img
-            alt="..."
-            className="dots"
-            src={require("assets/img/dots.png")}
+        {/* ===== HERO SECTION ===== */}
+        <div className="page-header" id="about-section">
+          <img alt="" className="dots" src={require("assets/img/dots.png")} />
+          <img alt="" className="path" src={require("assets/img/path4.png")} />
+
+          {/* Floating decorative squares */}
+          <div
+            className="floating-square sq-1"
+            style={{ backgroundImage: `url(${require("assets/img/square1.png")})` }}
           />
-          <img
-            alt="..."
-            className="path"
-            src={require("assets/img/path4.png")}
+          <div
+            className="floating-square sq-2"
+            style={{ backgroundImage: `url(${require("assets/img/square2.png")})` }}
           />
+          <div
+            className="floating-square sq-3"
+            style={{ backgroundImage: `url(${require("assets/img/square5.png")})` }}
+          />
+          <div
+            className="floating-square sq-4"
+            style={{ backgroundImage: `url(${require("assets/img/square3.png")})` }}
+          />
+
           <Container className="align-items-center">
             <Row>
-              <Col lg="6" md="6">
-                <h1 className="profile-title text-left">About Me</h1>
-                <h5 className="text-on-back">01</h5>
-                <p className="profile-description">
-                  Hi! 👋 My name is Raúl Del Valle Lima.<br />
-                  I am a curious developer with experience in Automation,
-                  IoT, Web Development, and DevOps practices.<br /><br />
-                  Always eager to learn and grow.
-                </p>
-                <div className="btn-wrapper profile pt-3">
-                  <Button
-                    className="btn-icon btn-round"
-                    color="github"
-                    href="https://github.com/r-dvl"
-                    id="tooltip639225725"
-                    target="_blank"
-                  >
-                    <i className="fab fa-github" />
-                  </Button>
-                  <UncontrolledTooltip delay={0} target="tooltip639225725">
-                    Follow me on GitHub
-                  </UncontrolledTooltip>
-                  <Button
-                    className="btn-icon btn-round"
-                    color="linkedin"
-                    href="https://www.linkedin.com/in/r-dvl"
-                    id="tooltip982846143"
-                    target="_blank"
-                  >
-                    <i className="fab fa-linkedin" />
-                  </Button>
-                  <UncontrolledTooltip delay={0} target="tooltip982846143">
-                    Follow me on LinkedIn
-                  </UncontrolledTooltip>
+              <Col lg="6" md="6" className="mb-5 mb-md-0">
+                <div className="section-animate">
+                  <div className="section-header" style={{ position: 'relative', top: 'auto', left: 'auto' }}>
+                    <span className="section-number">01 — About</span>
+                  </div>
+                  <h1 className="hero-name">
+                    Hi, I'm{" "}
+                    <span className="gradient-text">Raúl Del Valle</span>
+                  </h1>
+                  <div className="hero-roles">
+                    <TypingEffect words={roles} />
+                  </div>
+                  <p className="hero-description">
+                    Curious developer with experience in Automation, IoT, Web Development,
+                    and DevOps practices. Passionate about building scalable infrastructure
+                    and obsessed with clean code.
+                  </p>
+                  <div className="hero-social-btns">
+                    <a
+                      className="hero-social-btn"
+                      href="https://github.com/r-dvl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="GitHub"
+                    >
+                      <i className="fab fa-github" />
+                    </a>
+                    <a
+                      className="hero-social-btn"
+                      href="https://www.linkedin.com/in/r-dvl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                    >
+                      <i className="fab fa-linkedin" />
+                    </a>
+                  </div>
                 </div>
               </Col>
               <Col className="ml-auto mr-auto" lg="6" md="6">
-                <ProfileTabs tabs={tabs} setTabs={setTabs} />
+                <div className="section-animate section-animate-delay-2">
+                  <ProfileTabs tabs={tabs} setTabs={setTabs} />
+                </div>
               </Col>
             </Row>
           </Container>
         </div>
-        <ProjectsSection carouselItems={carouselItems} />
-        <section className="section">
+
+        {/* ===== TECH STACK ===== */}
+        <TechStack />
+
+        {/* ===== PROJECTS ===== */}
+        <ProjectsSection />
+
+        {/* ===== CONTACT ===== */}
+        <section className="section" id="contact-section">
           <Container>
             <Row>
               <Col md="6">
@@ -168,12 +223,15 @@ export default function ProfilePage() {
                   handleSubmit={handleSubmit}
                 />
               </Col>
-              <Col className="ml-auto" md="4">
-                <ContactInfo />
+              <Col className="ml-auto mt-4 mt-md-0" md="4">
+                <div className="contact-info-wrapper">
+                  <ContactInfo />
+                </div>
               </Col>
             </Row>
           </Container>
         </section>
+
         <Footer />
       </div>
     </>

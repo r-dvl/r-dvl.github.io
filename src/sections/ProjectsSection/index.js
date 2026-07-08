@@ -1,26 +1,78 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import Carousel from "components/Carousel";
 
-export default function ProjectsSection({ carouselItems }) {
+const projects = [
+  {
+    src: require("assets/img/projects/mahle.png"),
+    title: "IoT Software Development",
+    client: "MAHLE",
+    tags: ["IIoT", "OpenCV", "Python"],
+  },
+  {
+    src: require("assets/img/projects/audi.png"),
+    title: "IoT Software Development",
+    client: "Audi",
+    tags: ["IIoT", "Embedded", "C#"],
+  },
+  {
+    src: require("assets/img/projects/iveco.png"),
+    title: "IoT Software Development",
+    client: "Iveco",
+    tags: ["IIoT", "Angular", "Java"],
+  },
+  {
+    src: require("assets/img/projects/mapfre.png"),
+    title: "CI/CD Automation",
+    client: "Mapfre",
+    tags: ["Software Development", "CI/CD", "Automation"],
+  },
+  {
+    src: require("assets/img/projects/santander.png"),
+    title: "DevOps Service",
+    client: "Santander",
+    tags: ["Platform Engineering", "Kubernetes", "Cloud"],
+  },
+];
+
+export default function ProjectsSection() {
   return (
-    <div className="section">
+    <div className="section" id="projects-section">
       <Container>
-        <Row className="justify-content-between">
-          <Col md="6">
-            <Row className="justify-content-between align-items-center">
-              <Carousel items={carouselItems} />
-            </Row>
-          </Col>
-          <Col md="5">
-            <h1 className="profile-title text-left">Projects</h1>
-            <h5 className="text-on-back">02</h5>
-            <p className="profile-description text-left">
-              My career began in developing IoT applications, contributing to projects for companies such as Audi, MAHLE, and Iveco.<br /><br />
-              I later specialized in automation and CI/CD pipeline development at Mapfre, as I am obsessed with automation and clean code.<br /><br />
-              Currently, I deliver DevOps services for Santander Bank, where I am expanding my knowledge about Platform Engineering.<br /><br />
-              I am also dedicated to personal projects, which you can explore on my GitHub profile.<br /><br />
-            </p>
+        <div className="section-header">
+          <span className="section-number">03 — Work</span>
+          <h2 className="section-title">
+            Featured <span className="gradient-text">Projects</span>
+          </h2>
+          <p className="section-subtitle">
+            From IoT applications to Platform Engineering — delivering robust solutions for industry leaders.
+          </p>
+        </div>
+        <Row>
+          <Col xs="12">
+            <div className="projects-grid">
+              {projects.map((project, idx) => (
+                <div className="project-card stagger-item" key={idx}>
+                  <div className="project-image-wrapper">
+                    <img
+                      src={project.src}
+                      alt={`${project.client} - ${project.title}`}
+                      className="project-image"
+                    />
+                  </div>
+                  <div className="project-info">
+                    <div className="project-client">{project.client}</div>
+                    <div className="project-title">{project.title}</div>
+                    <div className="project-tags">
+                      {project.tags.map((tag, tagIdx) => (
+                        <span className="project-tag" key={tagIdx}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </Col>
         </Row>
       </Container>

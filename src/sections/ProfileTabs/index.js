@@ -1,13 +1,33 @@
 import React from "react";
-import { Card, CardHeader, CardBody, Nav, NavItem, NavLink, TabContent, TabPane, Table } from "reactstrap";
+import { Card, CardHeader, CardBody, Nav, NavItem, NavLink, TabContent, TabPane } from "reactstrap";
 import classnames from "classnames";
+
+const experiences = [
+  { company: "UST", role: "DevOps Engineer", date: "2024 - Present", icon: "fas fa-cloud" },
+  { company: "Kyndryl", role: "Software Engineer", date: "2023 - 2024", icon: "fas fa-code" },
+  { company: "STC", role: "Software Engineer", date: "2022 - 2023", icon: "fas fa-microchip" },
+  { company: "Roptex", role: "Software Engineer", date: "2021 - 2022", icon: "fas fa-robot" },
+];
+
+const certifications = [
+  { issuer: "Microsoft", name: "AZ-900", desc: "Azure Fundamentals", badge: "cert-azure" },
+  { issuer: "Microsoft", name: "AZ-204", desc: "Azure Developer Associate", badge: "cert-azure" },
+  { issuer: "Microsoft", name: "AZ-400", desc: "Azure DevOps Expert", badge: "cert-azure" },
+  { issuer: "Oracle", name: "OCI", desc: "Oracle Cloud Infrastructure Fundamentals", badge: "cert-oracle" },
+  { issuer: "MongoDB", name: "M320", desc: "MongoDB Database Modelling", badge: "cert-mongodb" },
+];
+
+const education = [
+  { course: "Master's in Robotics and Automation", date: "2020 - 2021", icon: "fas fa-graduation-cap" },
+  { course: "Electronics", date: "2019 - 2021", icon: "fas fa-bolt" },
+];
 
 export default function ProfileTabs({ tabs, setTabs }) {
   return (
-    <Card className="card-coin card-plain">
+    <Card className="card-coin card-plain profile-card-enhanced">
       <CardHeader>
         <img
-          alt="..."
+          alt="Raúl Del Valle Lima"
           className="img-center img-fluid rounded-circle"
           src={require("assets/img/profile.png")}
         />
@@ -45,95 +65,49 @@ export default function ProfileTabs({ tabs, setTabs }) {
         </Nav>
         <TabContent className="tab-subcategories" activeTab={"tab" + tabs}>
           <TabPane tabId="tab1">
-            <Table className="tablesorter" responsive>
-              <thead className="text-primary">
-                <tr>
-                  <th className="header">Company</th>
-                  <th className="header">Role</th>
-                  <th className="header">Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>UST</td>
-                  <td>DevOps Engineer</td>
-                  <td>2024 - Present</td>
-                </tr>
-                <tr>
-                  <td>Kyndryl</td>
-                  <td>Software Engineer</td>
-                  <td>2023 - 2024</td>
-                </tr>
-                <tr>
-                  <td>STC</td>
-                  <td>Software Engineer</td>
-                  <td>2022 - 2023</td>
-                </tr>
-                <tr>
-                  <td>Roptex</td>
-                  <td>Software Engineer</td>
-                  <td>2021 - 2022</td>
-                </tr>
-              </tbody>
-            </Table>
+            {experiences.map((exp, idx) => (
+              <div className="experience-card stagger-item" key={idx}>
+                <div className="exp-icon">
+                  <i className={exp.icon} />
+                </div>
+                <div className="exp-details">
+                  <div className="exp-company">{exp.company}</div>
+                  <div className="exp-role">{exp.role}</div>
+                  <div className="exp-date">{exp.date}</div>
+                </div>
+              </div>
+            ))}
           </TabPane>
           <TabPane tabId="tab2">
-            <Table className="tablesorter" responsive>
-              <thead className="text-primary">
-                <tr>
-                  <th className="header">Issuer</th>
-                  <th className="header">Name</th>
-                  <th className="header">Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Microsoft</td>
-                  <td>AZ-900</td>
-                  <td>Azure Fundamentals</td>
-                </tr>
-                <tr>
-                  <td>Microsoft</td>
-                  <td>AZ-204</td>
-                  <td>Azure Developer Associate</td>
-                </tr>
-                <tr>
-                  <td>Microsoft</td>
-                  <td>AZ-400</td>
-                  <td>Azure DevOps Expert</td>
-                </tr>
-                <tr>
-                  <td>Oracle</td>
-                  <td>OCI</td>
-                  <td>Oracle Cloud Infrastructure Fundamentals</td>
-                </tr>
-                <tr>
-                  <td>MongoDB</td>
-                  <td>M320</td>
-                  <td>MongoDB Database Modelling</td>
-                </tr>
-              </tbody>
-            </Table>
+            {certifications.map((cert, idx) => (
+              <div className="experience-card stagger-item" key={idx}>
+                <div className="exp-icon">
+                  <i className="fas fa-certificate" />
+                </div>
+                <div className="exp-details">
+                  <div className="exp-company">
+                    {cert.desc}
+                    <span className={`cert-badge ${cert.badge}`} style={{ marginLeft: 10 }}>
+                      {cert.name}
+                    </span>
+                  </div>
+                  <div className="exp-role">{cert.issuer}</div>
+                </div>
+              </div>
+            ))}
           </TabPane>
           <TabPane tabId="tab3">
-            <Table className="tablesorter" responsive>
-              <thead className="text-primary">
-                <tr>
-                  <th className="header">Course</th>
-                  <th className="header">Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Master's in Robotics and Automation</td>
-                  <td>2020 - 2021</td>
-                </tr>
-                <tr>
-                  <td>Electronics</td>
-                  <td>2019 - 2021</td>
-                </tr>
-              </tbody>
-            </Table>
+            {education.map((edu, idx) => (
+              <div className="experience-card stagger-item" key={idx}>
+                <div className="exp-icon">
+                  <i className={edu.icon} />
+                </div>
+                <div className="exp-details">
+                  <div className="exp-company">{edu.course}</div>
+                  <div className="exp-date">{edu.date}</div>
+                </div>
+              </div>
+            ))}
           </TabPane>
         </TabContent>
       </CardBody>

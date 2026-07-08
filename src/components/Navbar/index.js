@@ -11,8 +11,15 @@ import {
   Container,
   Row,
   Col,
-  UncontrolledTooltip,
 } from "reactstrap";
+
+const scrollToSection = (e, sectionId) => {
+  e.preventDefault();
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
 
 export default function IndexNavbar() {
   const [collapseOpen, setCollapseOpen] = React.useState(false);
@@ -55,9 +62,6 @@ export default function IndexNavbar() {
             <span>r-dvl | </span>
             Portfolio
           </NavbarBrand>
-          <UncontrolledTooltip placement="bottom" target="navbar-brand">
-            Designed and Coded by r-dvl
-          </UncontrolledTooltip>
           <button
             aria-expanded={collapseOpen}
             className="navbar-toggler navbar-toggler"
@@ -94,6 +98,42 @@ export default function IndexNavbar() {
             </Row>
           </div>
           <Nav navbar>
+            <NavItem>
+              <NavLink
+                className="nav-section-link"
+                href="#about"
+                onClick={(e) => scrollToSection(e, "about-section")}
+              >
+                About
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                className="nav-section-link"
+                href="#skills"
+                onClick={(e) => scrollToSection(e, "skills-section")}
+              >
+                Skills
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                className="nav-section-link"
+                href="#projects"
+                onClick={(e) => scrollToSection(e, "projects-section")}
+              >
+                Projects
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                className="nav-section-link"
+                href="#contact"
+                onClick={(e) => scrollToSection(e, "contact-section")}
+              >
+                Contact
+              </NavLink>
+            </NavItem>
             <NavItem className="p-0">
               <NavLink
                 data-placement="bottom"
@@ -117,6 +157,17 @@ export default function IndexNavbar() {
                 <i className="fab fa-linkedin" />
                 <p className="d-lg-none d-xl-none">Linkedin</p>
               </NavLink>
+            </NavItem>
+            <NavItem>
+              <a
+                className="nav-cv-btn"
+                href="https://rxresu.me/r-dvl/cv-en"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fas fa-file-alt" />
+                CV
+              </a>
             </NavItem>
           </Nav>
         </Collapse>

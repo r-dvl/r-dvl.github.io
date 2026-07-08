@@ -289,10 +289,13 @@
   overflow-x: hidden;
 
     .page-header{
-      min-height: 550px;
+      min-height: auto;
+      max-height: none !important;
+      overflow: visible !important;
+      padding-bottom: 80px;
 
       .container {
-        padding-top: 30vh;
+        padding-top: 18vh;
       }
 
       .path {
