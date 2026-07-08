@@ -79,7 +79,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Raúl Del Valle Lima. All rights reserved.
           </p>
           <span className="footer-credits">
-            Made with <span style={{ color: "#e14eca" }}>♥</span> from Algeciras
+            Made with <span style={{ color: "#e14eca" }}>♥</span> by r-dvl
           </span>
         </div>
       </Container>
